@@ -1,0 +1,565 @@
+<roblox xmlns:xmime="http://www.w3.org/2005/05/xmlmime" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.roblox.com/roblox.xsd" version="4">
+  <External>null</External>
+  <External>nil</External>
+  <Item class="Model" referent="RBXModelRoot">
+    <Properties>
+      <string name="Name">CyberPlasmaKatana</string>
+    </Properties>
+    <Item class="Part" referent="RBXPart1">
+      <Properties>
+        <string name="Name">Handle</string>
+        <bool name="Anchored">true</bool>
+        <Color3 name="Color3uint8">
+          <R>0.1176</R>
+          <G>0.1333</G>
+          <B>0.1765</B>
+        </Color3>
+        <Vector3 name="size">
+          <X>0.32</X>
+          <Y>3.6</Y>
+          <Z>0.32</Z>
+        </Vector3>
+        <CoordinateFrame name="CFrame">
+          <X>0</X>
+          <Y>2.2</Y>
+          <Z>0</Z>
+          <R00>1</R00><R01>0</R01><R02>0</R02>
+          <R10>0</R10><R11>1</R11><R12>0</R12>
+          <R20>0</R20><R21>0</R21><R22>1</R22>
+        </CoordinateFrame>
+      </Properties>
+    </Item>
+    <Item class="Part" referent="RBXPart2">
+      <Properties>
+        <string name="Name">PommelCap</string>
+        <bool name="Anchored">true</bool>
+        <Color3 name="Color3uint8">
+          <R>0.1176</R>
+          <G>0.1333</G>
+          <B>0.1765</B>
+        </Color3>
+        <Vector3 name="size">
+          <X>0.42</X>
+          <Y>0.35</Y>
+          <Z>0.42</Z>
+        </Vector3>
+        <CoordinateFrame name="CFrame">
+          <X>0</X>
+          <Y>0.3</Y>
+          <Z>0</Z>
+          <R00>1</R00><R01>0</R01><R02>0</R02>
+          <R10>0</R10><R11>1</R11><R12>0</R12>
+          <R20>0</R20><R21>0</R21><R22>1</R22>
+        </CoordinateFrame>
+      </Properties>
+    </Item>
+    <Item class="Part" referent="RBXPart3">
+      <Properties>
+        <string name="Name">PommelCoreNeon</string>
+        <bool name="Anchored">true</bool>
+        <Color3 name="Color3uint8">
+          <R>0</R>
+          <G>0.9608</G>
+          <B>0.8314</B>
+        </Color3>
+        <Vector3 name="size">
+          <X>0.36</X>
+          <Y>0.36</Y>
+          <Z>0.36</Z>
+        </Vector3>
+        <CoordinateFrame name="CFrame">
+          <X>0</X>
+          <Y>0.1</Y>
+          <Z>0</Z>
+          <R00>1</R00><R01>0</R01><R02>0</R02>
+          <R10>0</R10><R11>1</R11><R12>0</R12>
+          <R20>0</R20><R21>0</R21><R22>1</R22>
+        </CoordinateFrame>
+      </Properties>
+    </Item>
+    <Item class="Part" referent="RBXPart4">
+      <Properties>
+        <string name="Name">GripWrap_1</string>
+        <bool name="Anchored">true</bool>
+        <Color3 name="Color3uint8">
+          <R>1</R>
+          <G>0.1647</G>
+          <B>0.5216</B>
+        </Color3>
+        <Vector3 name="size">
+          <X>0.38</X>
+          <Y>0.24</Y>
+          <Z>0.38</Z>
+        </Vector3>
+        <CoordinateFrame name="CFrame">
+          <X>0</X>
+          <Y>0.75</Y>
+          <Z>0</Z>
+          <R00>1</R00><R01>0</R01><R02>0</R02>
+          <R10>0</R10><R11>1</R11><R12>0</R12>
+          <R20>0</R20><R21>0</R21><R22>1</R22>
+        </CoordinateFrame>
+      </Properties>
+    </Item>
+    <Item class="Part" referent="RBXPart5">
+      <Properties>
+        <string name="Name">GripWrap_2</string>
+        <bool name="Anchored">true</bool>
+        <Color3 name="Color3uint8">
+          <R>0.0784</R>
+          <G>0.0902</G>
+          <B>0.1255</B>
+        </Color3>
+        <Vector3 name="size">
+          <X>0.38</X>
+          <Y>0.24</Y>
+          <Z>0.38</Z>
+        </Vector3>
+        <CoordinateFrame name="CFrame">
+          <X>0</X>
+          <Y>1.17</Y>
+          <Z>0</Z>
+          <R00>1</R00><R01>0</R01><R02>0</R02>
+          <R10>0</R10><R11>1</R11><R12>0</R12>
+          <R20>0</R20><R21>0</R21><R22>1</R22>
+        </CoordinateFrame>
+      </Properties>
+    </Item>
+    <Item class="Part" referent="RBXPart6">
+      <Properties>
+        <string name="Name">GripWrap_3</string>
+        <bool name="Anchored">true</bool>
+        <Color3 name="Color3uint8">
+          <R>1</R>
+          <G>0.1647</G>
+          <B>0.5216</B>
+        </Color3>
+        <Vector3 name="size">
+          <X>0.38</X>
+          <Y>0.24</Y>
+          <Z>0.38</Z>
+        </Vector3>
+        <CoordinateFrame name="CFrame">
+          <X>0</X>
+          <Y>1.5899999999999999</Y>
+          <Z>0</Z>
+          <R00>1</R00><R01>0</R01><R02>0</R02>
+          <R10>0</R10><R11>1</R11><R12>0</R12>
+          <R20>0</R20><R21>0</R21><R22>1</R22>
+        </CoordinateFrame>
+      </Properties>
+    </Item>
+    <Item class="Part" referent="RBXPart7">
+      <Properties>
+        <string name="Name">GripWrap_4</string>
+        <bool name="Anchored">true</bool>
+        <Color3 name="Color3uint8">
+          <R>0.0784</R>
+          <G>0.0902</G>
+          <B>0.1255</B>
+        </Color3>
+        <Vector3 name="size">
+          <X>0.38</X>
+          <Y>0.24</Y>
+          <Z>0.38</Z>
+        </Vector3>
+        <CoordinateFrame name="CFrame">
+          <X>0</X>
+          <Y>2.01</Y>
+          <Z>0</Z>
+          <R00>1</R00><R01>0</R01><R02>0</R02>
+          <R10>0</R10><R11>1</R11><R12>0</R12>
+          <R20>0</R20><R21>0</R21><R22>1</R22>
+        </CoordinateFrame>
+      </Properties>
+    </Item>
+    <Item class="Part" referent="RBXPart8">
+      <Properties>
+        <string name="Name">GripWrap_5</string>
+        <bool name="Anchored">true</bool>
+        <Color3 name="Color3uint8">
+          <R>1</R>
+          <G>0.1647</G>
+          <B>0.5216</B>
+        </Color3>
+        <Vector3 name="size">
+          <X>0.38</X>
+          <Y>0.24</Y>
+          <Z>0.38</Z>
+        </Vector3>
+        <CoordinateFrame name="CFrame">
+          <X>0</X>
+          <Y>2.4299999999999997</Y>
+          <Z>0</Z>
+          <R00>1</R00><R01>0</R01><R02>0</R02>
+          <R10>0</R10><R11>1</R11><R12>0</R12>
+          <R20>0</R20><R21>0</R21><R22>1</R22>
+        </CoordinateFrame>
+      </Properties>
+    </Item>
+    <Item class="Part" referent="RBXPart9">
+      <Properties>
+        <string name="Name">GripWrap_6</string>
+        <bool name="Anchored">true</bool>
+        <Color3 name="Color3uint8">
+          <R>0.0784</R>
+          <G>0.0902</G>
+          <B>0.1255</B>
+        </Color3>
+        <Vector3 name="size">
+          <X>0.38</X>
+          <Y>0.24</Y>
+          <Z>0.38</Z>
+        </Vector3>
+        <CoordinateFrame name="CFrame">
+          <X>0</X>
+          <Y>2.85</Y>
+          <Z>0</Z>
+          <R00>1</R00><R01>0</R01><R02>0</R02>
+          <R10>0</R10><R11>1</R11><R12>0</R12>
+          <R20>0</R20><R21>0</R21><R22>1</R22>
+        </CoordinateFrame>
+      </Properties>
+    </Item>
+    <Item class="Part" referent="RBXPart10">
+      <Properties>
+        <string name="Name">GripWrap_7</string>
+        <bool name="Anchored">true</bool>
+        <Color3 name="Color3uint8">
+          <R>1</R>
+          <G>0.1647</G>
+          <B>0.5216</B>
+        </Color3>
+        <Vector3 name="size">
+          <X>0.38</X>
+          <Y>0.24</Y>
+          <Z>0.38</Z>
+        </Vector3>
+        <CoordinateFrame name="CFrame">
+          <X>0</X>
+          <Y>3.27</Y>
+          <Z>0</Z>
+          <R00>1</R00><R01>0</R01><R02>0</R02>
+          <R10>0</R10><R11>1</R11><R12>0</R12>
+          <R20>0</R20><R21>0</R21><R22>1</R22>
+        </CoordinateFrame>
+      </Properties>
+    </Item>
+    <Item class="Part" referent="RBXPart11">
+      <Properties>
+        <string name="Name">TsubaGuardPlate</string>
+        <bool name="Anchored">true</bool>
+        <Color3 name="Color3uint8">
+          <R>0.1176</R>
+          <G>0.1333</G>
+          <B>0.1765</B>
+        </Color3>
+        <Vector3 name="size">
+          <X>1.35</X>
+          <Y>0.22</Y>
+          <Z>0.95</Z>
+        </Vector3>
+        <CoordinateFrame name="CFrame">
+          <X>0</X>
+          <Y>4.05</Y>
+          <Z>0</Z>
+          <R00>1</R00><R01>0</R01><R02>0</R02>
+          <R10>0</R10><R11>1</R11><R12>0</R12>
+          <R20>0</R20><R21>0</R21><R22>1</R22>
+        </CoordinateFrame>
+      </Properties>
+    </Item>
+    <Item class="Part" referent="RBXPart12">
+      <Properties>
+        <string name="Name">TsubaNeonRim</string>
+        <bool name="Anchored">true</bool>
+        <Color3 name="Color3uint8">
+          <R>0</R>
+          <G>0.9608</G>
+          <B>0.8314</B>
+        </Color3>
+        <Vector3 name="size">
+          <X>1.42</X>
+          <Y>0.08</Y>
+          <Z>1.02</Z>
+        </Vector3>
+        <CoordinateFrame name="CFrame">
+          <X>0</X>
+          <Y>4.05</Y>
+          <Z>0</Z>
+          <R00>1</R00><R01>0</R01><R02>0</R02>
+          <R10>0</R10><R11>1</R11><R12>0</R12>
+          <R20>0</R20><R21>0</R21><R22>1</R22>
+        </CoordinateFrame>
+      </Properties>
+    </Item>
+    <Item class="Part" referent="RBXPart13">
+      <Properties>
+        <string name="Name">HabakiCollar</string>
+        <bool name="Anchored">true</bool>
+        <Color3 name="Color3uint8">
+          <R>1</R>
+          <G>0.1647</G>
+          <B>0.5216</B>
+        </Color3>
+        <Vector3 name="size">
+          <X>0.46</X>
+          <Y>0.55</Y>
+          <Z>0.26</Z>
+        </Vector3>
+        <CoordinateFrame name="CFrame">
+          <X>0</X>
+          <Y>4.4</Y>
+          <Z>0</Z>
+          <R00>1</R00><R01>0</R01><R02>0</R02>
+          <R10>0</R10><R11>1</R11><R12>0</R12>
+          <R20>0</R20><R21>0</R21><R22>1</R22>
+        </CoordinateFrame>
+      </Properties>
+    </Item>
+    <Item class="Part" referent="RBXPart14">
+      <Properties>
+        <string name="Name">BladeSpine_Lower</string>
+        <bool name="Anchored">true</bool>
+        <Color3 name="Color3uint8">
+          <R>0.1176</R>
+          <G>0.1333</G>
+          <B>0.1765</B>
+        </Color3>
+        <Vector3 name="size">
+          <X>0.34</X>
+          <Y>2.8</Y>
+          <Z>0.12</Z>
+        </Vector3>
+        <CoordinateFrame name="CFrame">
+          <X>-0.04</X>
+          <Y>6</Y>
+          <Z>0</Z>
+          <R00>1</R00><R01>0</R01><R02>0</R02>
+          <R10>0</R10><R11>1</R11><R12>0</R12>
+          <R20>0</R20><R21>0</R21><R22>1</R22>
+        </CoordinateFrame>
+      </Properties>
+    </Item>
+    <Item class="Part" referent="RBXPart15">
+      <Properties>
+        <string name="Name">BladeEdge_Lower</string>
+        <bool name="Anchored">true</bool>
+        <Color3 name="Color3uint8">
+          <R>0</R>
+          <G>0.9608</G>
+          <B>0.8314</B>
+        </Color3>
+        <Vector3 name="size">
+          <X>0.14</X>
+          <Y>2.8</Y>
+          <Z>0.06</Z>
+        </Vector3>
+        <CoordinateFrame name="CFrame">
+          <X>0.18</X>
+          <Y>6</Y>
+          <Z>0</Z>
+          <R00>1</R00><R01>0</R01><R02>0</R02>
+          <R10>0</R10><R11>1</R11><R12>0</R12>
+          <R20>0</R20><R21>0</R21><R22>1</R22>
+        </CoordinateFrame>
+      </Properties>
+    </Item>
+    <Item class="Part" referent="RBXPart16">
+      <Properties>
+        <string name="Name">BladeSpine_Mid</string>
+        <bool name="Anchored">true</bool>
+        <Color3 name="Color3uint8">
+          <R>0.8471</R>
+          <G>0.8863</G>
+          <B>0.9373</B>
+        </Color3>
+        <Vector3 name="size">
+          <X>0.31</X>
+          <Y>2.8</Y>
+          <Z>0.11</Z>
+        </Vector3>
+        <CoordinateFrame name="CFrame">
+          <X>-0.14</X>
+          <Y>8.75</Y>
+          <Z>0</Z>
+          <R00>1</R00><R01>0</R01><R02>0</R02>
+          <R10>0</R10><R11>1</R11><R12>0</R12>
+          <R20>0</R20><R21>0</R21><R22>1</R22>
+        </CoordinateFrame>
+      </Properties>
+    </Item>
+    <Item class="Part" referent="RBXPart17">
+      <Properties>
+        <string name="Name">BladeEdge_Mid</string>
+        <bool name="Anchored">true</bool>
+        <Color3 name="Color3uint8">
+          <R>0</R>
+          <G>0.9608</G>
+          <B>0.8314</B>
+        </Color3>
+        <Vector3 name="size">
+          <X>0.13</X>
+          <Y>2.8</Y>
+          <Z>0.05</Z>
+        </Vector3>
+        <CoordinateFrame name="CFrame">
+          <X>0.07</X>
+          <Y>8.75</Y>
+          <Z>0</Z>
+          <R00>1</R00><R01>0</R01><R02>0</R02>
+          <R10>0</R10><R11>1</R11><R12>0</R12>
+          <R20>0</R20><R21>0</R21><R22>1</R22>
+        </CoordinateFrame>
+      </Properties>
+    </Item>
+    <Item class="Part" referent="RBXPart18">
+      <Properties>
+        <string name="Name">BladeSpine_Upper</string>
+        <bool name="Anchored">true</bool>
+        <Color3 name="Color3uint8">
+          <R>0.8471</R>
+          <G>0.8863</G>
+          <B>0.9373</B>
+        </Color3>
+        <Vector3 name="size">
+          <X>0.26</X>
+          <Y>2.4</Y>
+          <Z>0.09</Z>
+        </Vector3>
+        <CoordinateFrame name="CFrame">
+          <X>-0.34</X>
+          <Y>11.25</Y>
+          <Z>0</Z>
+          <R00>1</R00><R01>0</R01><R02>0</R02>
+          <R10>0</R10><R11>1</R11><R12>0</R12>
+          <R20>0</R20><R21>0</R21><R22>1</R22>
+        </CoordinateFrame>
+      </Properties>
+    </Item>
+    <Item class="Part" referent="RBXPart19">
+      <Properties>
+        <string name="Name">BladeEdge_Upper</string>
+        <bool name="Anchored">true</bool>
+        <Color3 name="Color3uint8">
+          <R>0</R>
+          <G>0.9608</G>
+          <B>0.8314</B>
+        </Color3>
+        <Vector3 name="size">
+          <X>0.12</X>
+          <Y>2.4</Y>
+          <Z>0.05</Z>
+        </Vector3>
+        <CoordinateFrame name="CFrame">
+          <X>-0.14</X>
+          <Y>11.25</Y>
+          <Z>0</Z>
+          <R00>1</R00><R01>0</R01><R02>0</R02>
+          <R10>0</R10><R11>1</R11><R12>0</R12>
+          <R20>0</R20><R21>0</R21><R22>1</R22>
+        </CoordinateFrame>
+      </Properties>
+    </Item>
+    <Item class="WedgePart" referent="RBXPart20">
+      <Properties>
+        <string name="Name">KissakiTip</string>
+        <bool name="Anchored">true</bool>
+        <Color3 name="Color3uint8">
+          <R>0</R>
+          <G>0.9608</G>
+          <B>0.8314</B>
+        </Color3>
+        <Vector3 name="size">
+          <X>0.09</X>
+          <Y>1.35</Y>
+          <Z>0.34</Z>
+        </Vector3>
+        <CoordinateFrame name="CFrame">
+          <X>-0.55</X>
+          <Y>13</Y>
+          <Z>0</Z>
+          <R00>1</R00><R01>0</R01><R02>0</R02>
+          <R10>0</R10><R11>1</R11><R12>0</R12>
+          <R20>0</R20><R21>0</R21><R22>1</R22>
+        </CoordinateFrame>
+      </Properties>
+    </Item>
+    <Item class="Script" referent="RBXBuilderScript">
+      <Properties>
+        <string name="Name">CodexBuilderScript</string>
+        <ProtectedString name="Source">-- Generated by OpenAI Codex (v0.1.0-free) — Roblox Studio 3D Model Builder
+-- Model: CyberPlasmaKatana (20 precision parts)
+-- Paste into Roblox Studio Command Bar or run via the Codex-Free Live Sync Plugin
+
+local Workspace = game:GetService("Workspace")
+local model = Instance.new("Model")
+model.Name = "CyberPlasmaKatana"
+model.Parent = Workspace
+
+local partsByName = {}
+local function createPart(name, shape, size, pos, rot, color, mat, transparency, reflectance, lightInfo)
+    local p = Instance.new(shape == "Wedge" and "WedgePart" or "Part")
+    p.Name = name
+    if shape == "Cylinder" and p:IsA("Part") then p.Shape = Enum.PartType.Cylinder
+    elseif shape == "Ball" and p:IsA("Part") then p.Shape = Enum.PartType.Ball end
+    p.Size = size
+    p.CFrame = CFrame.new(pos) * CFrame.Angles(math.rad(rot.X), math.rad(rot.Y), math.rad(rot.Z))
+    p.Color = color
+    p.Material = Enum.Material[mat] or Enum.Material.SmoothPlastic
+    p.Transparency = transparency or 0
+    p.Reflectance = reflectance or 0
+    p.Anchored = true
+    p.TopSurface = Enum.SurfaceType.Smooth
+    p.BottomSurface = Enum.SurfaceType.Smooth
+    p.Parent = model
+    if lightInfo then
+        local light = Instance.new("PointLight")
+        light.Color = lightInfo.color
+        light.Brightness = lightInfo.brightness
+        light.Range = lightInfo.range
+        light.Parent = p
+    end
+    partsByName[name] = p
+    return p
+end
+
+createPart("Handle", "Cylinder", Vector3.new(0.32, 3.6, 0.32), Vector3.new(0, 2.2, 0), Vector3.new(0, 0, 90), Color3.fromRGB(30, 34, 45), "Metal", 0, 0, nil)
+model.PrimaryPart = partsByName["Handle"]
+createPart("PommelCap", "Cylinder", Vector3.new(0.42, 0.35, 0.42), Vector3.new(0, 0.3, 0), Vector3.new(0, 0, 90), Color3.fromRGB(30, 34, 45), "Metal", 0, 0, nil)
+createPart("PommelCoreNeon", "Ball", Vector3.new(0.36, 0.36, 0.36), Vector3.new(0, 0.1, 0), Vector3.new(0, 0, 0), Color3.fromRGB(0, 245, 212), "Neon", 0, 0, { color = Color3.fromRGB(0, 245, 212), brightness = 2.5, range = 8 })
+createPart("GripWrap_1", "Block", Vector3.new(0.38, 0.24, 0.38), Vector3.new(0, 0.75, 0), Vector3.new(0, 45, 0), Color3.fromRGB(255, 42, 133), "Neon", 0, 0, nil)
+createPart("GripWrap_2", "Block", Vector3.new(0.38, 0.24, 0.38), Vector3.new(0, 1.17, 0), Vector3.new(0, 45, 0), Color3.fromRGB(20, 23, 32), "Fabric", 0, 0, nil)
+createPart("GripWrap_3", "Block", Vector3.new(0.38, 0.24, 0.38), Vector3.new(0, 1.5899999999999999, 0), Vector3.new(0, 45, 0), Color3.fromRGB(255, 42, 133), "Neon", 0, 0, nil)
+createPart("GripWrap_4", "Block", Vector3.new(0.38, 0.24, 0.38), Vector3.new(0, 2.01, 0), Vector3.new(0, 45, 0), Color3.fromRGB(20, 23, 32), "Fabric", 0, 0, nil)
+createPart("GripWrap_5", "Block", Vector3.new(0.38, 0.24, 0.38), Vector3.new(0, 2.4299999999999997, 0), Vector3.new(0, 45, 0), Color3.fromRGB(255, 42, 133), "Neon", 0, 0, nil)
+createPart("GripWrap_6", "Block", Vector3.new(0.38, 0.24, 0.38), Vector3.new(0, 2.85, 0), Vector3.new(0, 45, 0), Color3.fromRGB(20, 23, 32), "Fabric", 0, 0, nil)
+createPart("GripWrap_7", "Block", Vector3.new(0.38, 0.24, 0.38), Vector3.new(0, 3.27, 0), Vector3.new(0, 45, 0), Color3.fromRGB(255, 42, 133), "Neon", 0, 0, nil)
+createPart("TsubaGuardPlate", "Block", Vector3.new(1.35, 0.22, 0.95), Vector3.new(0, 4.05, 0), Vector3.new(0, 0, 0), Color3.fromRGB(30, 34, 45), "Metal", 0, 0, nil)
+createPart("TsubaNeonRim", "Block", Vector3.new(1.42, 0.08, 1.02), Vector3.new(0, 4.05, 0), Vector3.new(0, 0, 0), Color3.fromRGB(0, 245, 212), "Neon", 0, 0, nil)
+createPart("HabakiCollar", "Block", Vector3.new(0.46, 0.55, 0.26), Vector3.new(0, 4.4, 0), Vector3.new(0, 0, 0), Color3.fromRGB(255, 42, 133), "Metal", 0, 0, nil)
+createPart("BladeSpine_Lower", "Block", Vector3.new(0.34, 2.8, 0.12), Vector3.new(-0.04, 6, 0), Vector3.new(0, 0, -2), Color3.fromRGB(30, 34, 45), "Metal", 0, 0, nil)
+createPart("BladeEdge_Lower", "Block", Vector3.new(0.14, 2.8, 0.06), Vector3.new(0.18, 6, 0), Vector3.new(0, 0, -2), Color3.fromRGB(0, 245, 212), "Neon", 0, 0, { color = Color3.fromRGB(0, 245, 212), brightness = 3, range = 12 })
+createPart("BladeSpine_Mid", "Block", Vector3.new(0.31, 2.8, 0.11), Vector3.new(-0.14, 8.75, 0), Vector3.new(0, 0, -5), Color3.fromRGB(216, 226, 239), "Metal", 0, 0, nil)
+createPart("BladeEdge_Mid", "Block", Vector3.new(0.13, 2.8, 0.05), Vector3.new(0.07, 8.75, 0), Vector3.new(0, 0, -5), Color3.fromRGB(0, 245, 212), "Neon", 0, 0, nil)
+createPart("BladeSpine_Upper", "Block", Vector3.new(0.26, 2.4, 0.09), Vector3.new(-0.34, 11.25, 0), Vector3.new(0, 0, -9), Color3.fromRGB(216, 226, 239), "Metal", 0, 0, nil)
+createPart("BladeEdge_Upper", "Block", Vector3.new(0.12, 2.4, 0.05), Vector3.new(-0.14, 11.25, 0), Vector3.new(0, 0, -9), Color3.fromRGB(0, 245, 212), "Neon", 0, 0, nil)
+createPart("KissakiTip", "Wedge", Vector3.new(0.09, 1.35, 0.34), Vector3.new(-0.55, 13, 0), Vector3.new(0, 90, -13), Color3.fromRGB(0, 245, 212), "Neon", 0, 0, nil)
+
+-- Weld all parts to PrimaryPart so the model can move as a cohesive unit
+if model.PrimaryPart then
+    for _, child in ipairs(model:GetChildren()) do
+        if child:IsA("BasePart") and child ~= model.PrimaryPart then
+            local weld = Instance.new("WeldConstraint")
+            weld.Part0 = model.PrimaryPart
+            weld.Part1 = child
+            weld.Parent = model.PrimaryPart
+        end
+    end
+end
+print("[Codex-Free] Spawned Roblox Model: CyberPlasmaKatana (20 parts)")
+return model</ProtectedString>
+      </Properties>
+    </Item>
+  </Item>
+</roblox>

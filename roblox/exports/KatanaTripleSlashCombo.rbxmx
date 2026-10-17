@@ -1,0 +1,874 @@
+<roblox xmlns:xmime="http://www.w3.org/2005/05/xmlmime" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.roblox.com/roblox.xsd" version="4">
+  <External>null</External>
+  <External>nil</External>
+  <Item class="KeyframeSequence" referent="RBXKFS0">
+    <Properties>
+      <string name="Name">KatanaTripleSlashCombo</string>
+      <bool name="Loop">true</bool>
+    </Properties>
+    <Item class="Keyframe" referent="RBXKF_0">
+      <Properties>
+        <string name="Name">CombatReadyStance</string>
+        <float name="Time">0</float>
+      </Properties>
+      <Item class="Pose" referent="RBXRootPose_0">
+        <Properties>
+          <string name="Name">HumanoidRootPart</string>
+          <float name="Weight">1</float>
+        </Properties>
+          <Item class="Pose" referent="RBXPose_0_0">
+            <Properties>
+              <string name="Name">LowerTorso</string>
+              <float name="Weight">1</float>
+              <CoordinateFrame name="CFrame">
+                <X>0</X><Y>-0.25</Y><Z>0</Z>
+                <R00>1</R00><R01>0</R01><R02>0</R02>
+                <R10>0</R10><R11>1</R11><R12>0</R12>
+                <R20>0</R20><R21>0</R21><R22>1</R22>
+              </CoordinateFrame>
+            </Properties>
+          </Item>
+          <Item class="Pose" referent="RBXPose_0_1">
+            <Properties>
+              <string name="Name">UpperTorso</string>
+              <float name="Weight">1</float>
+              <CoordinateFrame name="CFrame">
+                <X>0</X><Y>0</Y><Z>0</Z>
+                <R00>1</R00><R01>0</R01><R02>0</R02>
+                <R10>0</R10><R11>1</R11><R12>0</R12>
+                <R20>0</R20><R21>0</R21><R22>1</R22>
+              </CoordinateFrame>
+            </Properties>
+          </Item>
+          <Item class="Pose" referent="RBXPose_0_2">
+            <Properties>
+              <string name="Name">Head</string>
+              <float name="Weight">1</float>
+              <CoordinateFrame name="CFrame">
+                <X>0</X><Y>0</Y><Z>0</Z>
+                <R00>1</R00><R01>0</R01><R02>0</R02>
+                <R10>0</R10><R11>1</R11><R12>0</R12>
+                <R20>0</R20><R21>0</R21><R22>1</R22>
+              </CoordinateFrame>
+            </Properties>
+          </Item>
+          <Item class="Pose" referent="RBXPose_0_3">
+            <Properties>
+              <string name="Name">RightUpperArm</string>
+              <float name="Weight">1</float>
+              <CoordinateFrame name="CFrame">
+                <X>0</X><Y>0</Y><Z>0</Z>
+                <R00>1</R00><R01>0</R01><R02>0</R02>
+                <R10>0</R10><R11>1</R11><R12>0</R12>
+                <R20>0</R20><R21>0</R21><R22>1</R22>
+              </CoordinateFrame>
+            </Properties>
+          </Item>
+          <Item class="Pose" referent="RBXPose_0_4">
+            <Properties>
+              <string name="Name">RightLowerArm</string>
+              <float name="Weight">1</float>
+              <CoordinateFrame name="CFrame">
+                <X>0</X><Y>0</Y><Z>0</Z>
+                <R00>1</R00><R01>0</R01><R02>0</R02>
+                <R10>0</R10><R11>1</R11><R12>0</R12>
+                <R20>0</R20><R21>0</R21><R22>1</R22>
+              </CoordinateFrame>
+            </Properties>
+          </Item>
+          <Item class="Pose" referent="RBXPose_0_5">
+            <Properties>
+              <string name="Name">RightHand</string>
+              <float name="Weight">1</float>
+              <CoordinateFrame name="CFrame">
+                <X>0</X><Y>0</Y><Z>0</Z>
+                <R00>1</R00><R01>0</R01><R02>0</R02>
+                <R10>0</R10><R11>1</R11><R12>0</R12>
+                <R20>0</R20><R21>0</R21><R22>1</R22>
+              </CoordinateFrame>
+            </Properties>
+          </Item>
+          <Item class="Pose" referent="RBXPose_0_6">
+            <Properties>
+              <string name="Name">LeftUpperArm</string>
+              <float name="Weight">1</float>
+              <CoordinateFrame name="CFrame">
+                <X>0</X><Y>0</Y><Z>0</Z>
+                <R00>1</R00><R01>0</R01><R02>0</R02>
+                <R10>0</R10><R11>1</R11><R12>0</R12>
+                <R20>0</R20><R21>0</R21><R22>1</R22>
+              </CoordinateFrame>
+            </Properties>
+          </Item>
+          <Item class="Pose" referent="RBXPose_0_7">
+            <Properties>
+              <string name="Name">LeftLowerArm</string>
+              <float name="Weight">1</float>
+              <CoordinateFrame name="CFrame">
+                <X>0</X><Y>0</Y><Z>0</Z>
+                <R00>1</R00><R01>0</R01><R02>0</R02>
+                <R10>0</R10><R11>1</R11><R12>0</R12>
+                <R20>0</R20><R21>0</R21><R22>1</R22>
+              </CoordinateFrame>
+            </Properties>
+          </Item>
+          <Item class="Pose" referent="RBXPose_0_8">
+            <Properties>
+              <string name="Name">LeftUpperLeg</string>
+              <float name="Weight">1</float>
+              <CoordinateFrame name="CFrame">
+                <X>0</X><Y>0</Y><Z>0</Z>
+                <R00>1</R00><R01>0</R01><R02>0</R02>
+                <R10>0</R10><R11>1</R11><R12>0</R12>
+                <R20>0</R20><R21>0</R21><R22>1</R22>
+              </CoordinateFrame>
+            </Properties>
+          </Item>
+          <Item class="Pose" referent="RBXPose_0_9">
+            <Properties>
+              <string name="Name">LeftLowerLeg</string>
+              <float name="Weight">1</float>
+              <CoordinateFrame name="CFrame">
+                <X>0</X><Y>0</Y><Z>0</Z>
+                <R00>1</R00><R01>0</R01><R02>0</R02>
+                <R10>0</R10><R11>1</R11><R12>0</R12>
+                <R20>0</R20><R21>0</R21><R22>1</R22>
+              </CoordinateFrame>
+            </Properties>
+          </Item>
+          <Item class="Pose" referent="RBXPose_0_10">
+            <Properties>
+              <string name="Name">RightUpperLeg</string>
+              <float name="Weight">1</float>
+              <CoordinateFrame name="CFrame">
+                <X>0</X><Y>0</Y><Z>0</Z>
+                <R00>1</R00><R01>0</R01><R02>0</R02>
+                <R10>0</R10><R11>1</R11><R12>0</R12>
+                <R20>0</R20><R21>0</R21><R22>1</R22>
+              </CoordinateFrame>
+            </Properties>
+          </Item>
+          <Item class="Pose" referent="RBXPose_0_11">
+            <Properties>
+              <string name="Name">RightLowerLeg</string>
+              <float name="Weight">1</float>
+              <CoordinateFrame name="CFrame">
+                <X>0</X><Y>0</Y><Z>0</Z>
+                <R00>1</R00><R01>0</R01><R02>0</R02>
+                <R10>0</R10><R11>1</R11><R12>0</R12>
+                <R20>0</R20><R21>0</R21><R22>1</R22>
+              </CoordinateFrame>
+            </Properties>
+          </Item>
+      </Item>
+    </Item>
+    <Item class="Keyframe" referent="RBXKF_1">
+      <Properties>
+        <string name="Name">DiagonalStrike1_Impact</string>
+        <float name="Time">0.28</float>
+      </Properties>
+      <Item class="Pose" referent="RBXRootPose_1">
+        <Properties>
+          <string name="Name">HumanoidRootPart</string>
+          <float name="Weight">1</float>
+        </Properties>
+          <Item class="Pose" referent="RBXPose_1_0">
+            <Properties>
+              <string name="Name">LowerTorso</string>
+              <float name="Weight">1</float>
+              <CoordinateFrame name="CFrame">
+                <X>0</X><Y>-0.35</Y><Z>-0.4</Z>
+                <R00>1</R00><R01>0</R01><R02>0</R02>
+                <R10>0</R10><R11>1</R11><R12>0</R12>
+                <R20>0</R20><R21>0</R21><R22>1</R22>
+              </CoordinateFrame>
+            </Properties>
+          </Item>
+          <Item class="Pose" referent="RBXPose_1_1">
+            <Properties>
+              <string name="Name">UpperTorso</string>
+              <float name="Weight">1</float>
+              <CoordinateFrame name="CFrame">
+                <X>0</X><Y>0</Y><Z>0</Z>
+                <R00>1</R00><R01>0</R01><R02>0</R02>
+                <R10>0</R10><R11>1</R11><R12>0</R12>
+                <R20>0</R20><R21>0</R21><R22>1</R22>
+              </CoordinateFrame>
+            </Properties>
+          </Item>
+          <Item class="Pose" referent="RBXPose_1_2">
+            <Properties>
+              <string name="Name">Head</string>
+              <float name="Weight">1</float>
+              <CoordinateFrame name="CFrame">
+                <X>0</X><Y>0</Y><Z>0</Z>
+                <R00>1</R00><R01>0</R01><R02>0</R02>
+                <R10>0</R10><R11>1</R11><R12>0</R12>
+                <R20>0</R20><R21>0</R21><R22>1</R22>
+              </CoordinateFrame>
+            </Properties>
+          </Item>
+          <Item class="Pose" referent="RBXPose_1_3">
+            <Properties>
+              <string name="Name">RightUpperArm</string>
+              <float name="Weight">1</float>
+              <CoordinateFrame name="CFrame">
+                <X>0</X><Y>0</Y><Z>0</Z>
+                <R00>1</R00><R01>0</R01><R02>0</R02>
+                <R10>0</R10><R11>1</R11><R12>0</R12>
+                <R20>0</R20><R21>0</R21><R22>1</R22>
+              </CoordinateFrame>
+            </Properties>
+          </Item>
+          <Item class="Pose" referent="RBXPose_1_4">
+            <Properties>
+              <string name="Name">RightLowerArm</string>
+              <float name="Weight">1</float>
+              <CoordinateFrame name="CFrame">
+                <X>0</X><Y>0</Y><Z>0</Z>
+                <R00>1</R00><R01>0</R01><R02>0</R02>
+                <R10>0</R10><R11>1</R11><R12>0</R12>
+                <R20>0</R20><R21>0</R21><R22>1</R22>
+              </CoordinateFrame>
+            </Properties>
+          </Item>
+          <Item class="Pose" referent="RBXPose_1_5">
+            <Properties>
+              <string name="Name">RightHand</string>
+              <float name="Weight">1</float>
+              <CoordinateFrame name="CFrame">
+                <X>0</X><Y>0</Y><Z>0</Z>
+                <R00>1</R00><R01>0</R01><R02>0</R02>
+                <R10>0</R10><R11>1</R11><R12>0</R12>
+                <R20>0</R20><R21>0</R21><R22>1</R22>
+              </CoordinateFrame>
+            </Properties>
+          </Item>
+          <Item class="Pose" referent="RBXPose_1_6">
+            <Properties>
+              <string name="Name">LeftUpperArm</string>
+              <float name="Weight">1</float>
+              <CoordinateFrame name="CFrame">
+                <X>0</X><Y>0</Y><Z>0</Z>
+                <R00>1</R00><R01>0</R01><R02>0</R02>
+                <R10>0</R10><R11>1</R11><R12>0</R12>
+                <R20>0</R20><R21>0</R21><R22>1</R22>
+              </CoordinateFrame>
+            </Properties>
+          </Item>
+          <Item class="Pose" referent="RBXPose_1_7">
+            <Properties>
+              <string name="Name">LeftLowerArm</string>
+              <float name="Weight">1</float>
+              <CoordinateFrame name="CFrame">
+                <X>0</X><Y>0</Y><Z>0</Z>
+                <R00>1</R00><R01>0</R01><R02>0</R02>
+                <R10>0</R10><R11>1</R11><R12>0</R12>
+                <R20>0</R20><R21>0</R21><R22>1</R22>
+              </CoordinateFrame>
+            </Properties>
+          </Item>
+          <Item class="Pose" referent="RBXPose_1_8">
+            <Properties>
+              <string name="Name">LeftUpperLeg</string>
+              <float name="Weight">1</float>
+              <CoordinateFrame name="CFrame">
+                <X>0</X><Y>0</Y><Z>0</Z>
+                <R00>1</R00><R01>0</R01><R02>0</R02>
+                <R10>0</R10><R11>1</R11><R12>0</R12>
+                <R20>0</R20><R21>0</R21><R22>1</R22>
+              </CoordinateFrame>
+            </Properties>
+          </Item>
+          <Item class="Pose" referent="RBXPose_1_9">
+            <Properties>
+              <string name="Name">LeftLowerLeg</string>
+              <float name="Weight">1</float>
+              <CoordinateFrame name="CFrame">
+                <X>0</X><Y>0</Y><Z>0</Z>
+                <R00>1</R00><R01>0</R01><R02>0</R02>
+                <R10>0</R10><R11>1</R11><R12>0</R12>
+                <R20>0</R20><R21>0</R21><R22>1</R22>
+              </CoordinateFrame>
+            </Properties>
+          </Item>
+          <Item class="Pose" referent="RBXPose_1_10">
+            <Properties>
+              <string name="Name">RightUpperLeg</string>
+              <float name="Weight">1</float>
+              <CoordinateFrame name="CFrame">
+                <X>0</X><Y>0</Y><Z>0</Z>
+                <R00>1</R00><R01>0</R01><R02>0</R02>
+                <R10>0</R10><R11>1</R11><R12>0</R12>
+                <R20>0</R20><R21>0</R21><R22>1</R22>
+              </CoordinateFrame>
+            </Properties>
+          </Item>
+          <Item class="Pose" referent="RBXPose_1_11">
+            <Properties>
+              <string name="Name">RightLowerLeg</string>
+              <float name="Weight">1</float>
+              <CoordinateFrame name="CFrame">
+                <X>0</X><Y>0</Y><Z>0</Z>
+                <R00>1</R00><R01>0</R01><R02>0</R02>
+                <R10>0</R10><R11>1</R11><R12>0</R12>
+                <R20>0</R20><R21>0</R21><R22>1</R22>
+              </CoordinateFrame>
+            </Properties>
+          </Item>
+      </Item>
+    </Item>
+    <Item class="Keyframe" referent="RBXKF_2">
+      <Properties>
+        <string name="Name">ReverseCrossSlash2</string>
+        <float name="Time">0.62</float>
+      </Properties>
+      <Item class="Pose" referent="RBXRootPose_2">
+        <Properties>
+          <string name="Name">HumanoidRootPart</string>
+          <float name="Weight">1</float>
+        </Properties>
+          <Item class="Pose" referent="RBXPose_2_0">
+            <Properties>
+              <string name="Name">LowerTorso</string>
+              <float name="Weight">1</float>
+              <CoordinateFrame name="CFrame">
+                <X>0</X><Y>-0.2</Y><Z>-0.6</Z>
+                <R00>1</R00><R01>0</R01><R02>0</R02>
+                <R10>0</R10><R11>1</R11><R12>0</R12>
+                <R20>0</R20><R21>0</R21><R22>1</R22>
+              </CoordinateFrame>
+            </Properties>
+          </Item>
+          <Item class="Pose" referent="RBXPose_2_1">
+            <Properties>
+              <string name="Name">UpperTorso</string>
+              <float name="Weight">1</float>
+              <CoordinateFrame name="CFrame">
+                <X>0</X><Y>0</Y><Z>0</Z>
+                <R00>1</R00><R01>0</R01><R02>0</R02>
+                <R10>0</R10><R11>1</R11><R12>0</R12>
+                <R20>0</R20><R21>0</R21><R22>1</R22>
+              </CoordinateFrame>
+            </Properties>
+          </Item>
+          <Item class="Pose" referent="RBXPose_2_2">
+            <Properties>
+              <string name="Name">Head</string>
+              <float name="Weight">1</float>
+              <CoordinateFrame name="CFrame">
+                <X>0</X><Y>0</Y><Z>0</Z>
+                <R00>1</R00><R01>0</R01><R02>0</R02>
+                <R10>0</R10><R11>1</R11><R12>0</R12>
+                <R20>0</R20><R21>0</R21><R22>1</R22>
+              </CoordinateFrame>
+            </Properties>
+          </Item>
+          <Item class="Pose" referent="RBXPose_2_3">
+            <Properties>
+              <string name="Name">RightUpperArm</string>
+              <float name="Weight">1</float>
+              <CoordinateFrame name="CFrame">
+                <X>0</X><Y>0</Y><Z>0</Z>
+                <R00>1</R00><R01>0</R01><R02>0</R02>
+                <R10>0</R10><R11>1</R11><R12>0</R12>
+                <R20>0</R20><R21>0</R21><R22>1</R22>
+              </CoordinateFrame>
+            </Properties>
+          </Item>
+          <Item class="Pose" referent="RBXPose_2_4">
+            <Properties>
+              <string name="Name">RightLowerArm</string>
+              <float name="Weight">1</float>
+              <CoordinateFrame name="CFrame">
+                <X>0</X><Y>0</Y><Z>0</Z>
+                <R00>1</R00><R01>0</R01><R02>0</R02>
+                <R10>0</R10><R11>1</R11><R12>0</R12>
+                <R20>0</R20><R21>0</R21><R22>1</R22>
+              </CoordinateFrame>
+            </Properties>
+          </Item>
+          <Item class="Pose" referent="RBXPose_2_5">
+            <Properties>
+              <string name="Name">LeftUpperArm</string>
+              <float name="Weight">1</float>
+              <CoordinateFrame name="CFrame">
+                <X>0</X><Y>0</Y><Z>0</Z>
+                <R00>1</R00><R01>0</R01><R02>0</R02>
+                <R10>0</R10><R11>1</R11><R12>0</R12>
+                <R20>0</R20><R21>0</R21><R22>1</R22>
+              </CoordinateFrame>
+            </Properties>
+          </Item>
+          <Item class="Pose" referent="RBXPose_2_6">
+            <Properties>
+              <string name="Name">LeftLowerArm</string>
+              <float name="Weight">1</float>
+              <CoordinateFrame name="CFrame">
+                <X>0</X><Y>0</Y><Z>0</Z>
+                <R00>1</R00><R01>0</R01><R02>0</R02>
+                <R10>0</R10><R11>1</R11><R12>0</R12>
+                <R20>0</R20><R21>0</R21><R22>1</R22>
+              </CoordinateFrame>
+            </Properties>
+          </Item>
+          <Item class="Pose" referent="RBXPose_2_7">
+            <Properties>
+              <string name="Name">LeftUpperLeg</string>
+              <float name="Weight">1</float>
+              <CoordinateFrame name="CFrame">
+                <X>0</X><Y>0</Y><Z>0</Z>
+                <R00>1</R00><R01>0</R01><R02>0</R02>
+                <R10>0</R10><R11>1</R11><R12>0</R12>
+                <R20>0</R20><R21>0</R21><R22>1</R22>
+              </CoordinateFrame>
+            </Properties>
+          </Item>
+          <Item class="Pose" referent="RBXPose_2_8">
+            <Properties>
+              <string name="Name">LeftLowerLeg</string>
+              <float name="Weight">1</float>
+              <CoordinateFrame name="CFrame">
+                <X>0</X><Y>0</Y><Z>0</Z>
+                <R00>1</R00><R01>0</R01><R02>0</R02>
+                <R10>0</R10><R11>1</R11><R12>0</R12>
+                <R20>0</R20><R21>0</R21><R22>1</R22>
+              </CoordinateFrame>
+            </Properties>
+          </Item>
+          <Item class="Pose" referent="RBXPose_2_9">
+            <Properties>
+              <string name="Name">RightUpperLeg</string>
+              <float name="Weight">1</float>
+              <CoordinateFrame name="CFrame">
+                <X>0</X><Y>0</Y><Z>0</Z>
+                <R00>1</R00><R01>0</R01><R02>0</R02>
+                <R10>0</R10><R11>1</R11><R12>0</R12>
+                <R20>0</R20><R21>0</R21><R22>1</R22>
+              </CoordinateFrame>
+            </Properties>
+          </Item>
+          <Item class="Pose" referent="RBXPose_2_10">
+            <Properties>
+              <string name="Name">RightLowerLeg</string>
+              <float name="Weight">1</float>
+              <CoordinateFrame name="CFrame">
+                <X>0</X><Y>0</Y><Z>0</Z>
+                <R00>1</R00><R01>0</R01><R02>0</R02>
+                <R10>0</R10><R11>1</R11><R12>0</R12>
+                <R20>0</R20><R21>0</R21><R22>1</R22>
+              </CoordinateFrame>
+            </Properties>
+          </Item>
+      </Item>
+    </Item>
+    <Item class="Keyframe" referent="RBXKF_3">
+      <Properties>
+        <string name="Name">AerialSpinCleave_Apex</string>
+        <float name="Time">0.95</float>
+      </Properties>
+      <Item class="Pose" referent="RBXRootPose_3">
+        <Properties>
+          <string name="Name">HumanoidRootPart</string>
+          <float name="Weight">1</float>
+        </Properties>
+          <Item class="Pose" referent="RBXPose_3_0">
+            <Properties>
+              <string name="Name">LowerTorso</string>
+              <float name="Weight">1</float>
+              <CoordinateFrame name="CFrame">
+                <X>0</X><Y>1.45</Y><Z>-0.8</Z>
+                <R00>1</R00><R01>0</R01><R02>0</R02>
+                <R10>0</R10><R11>1</R11><R12>0</R12>
+                <R20>0</R20><R21>0</R21><R22>1</R22>
+              </CoordinateFrame>
+            </Properties>
+          </Item>
+          <Item class="Pose" referent="RBXPose_3_1">
+            <Properties>
+              <string name="Name">UpperTorso</string>
+              <float name="Weight">1</float>
+              <CoordinateFrame name="CFrame">
+                <X>0</X><Y>0</Y><Z>0</Z>
+                <R00>1</R00><R01>0</R01><R02>0</R02>
+                <R10>0</R10><R11>1</R11><R12>0</R12>
+                <R20>0</R20><R21>0</R21><R22>1</R22>
+              </CoordinateFrame>
+            </Properties>
+          </Item>
+          <Item class="Pose" referent="RBXPose_3_2">
+            <Properties>
+              <string name="Name">Head</string>
+              <float name="Weight">1</float>
+              <CoordinateFrame name="CFrame">
+                <X>0</X><Y>0</Y><Z>0</Z>
+                <R00>1</R00><R01>0</R01><R02>0</R02>
+                <R10>0</R10><R11>1</R11><R12>0</R12>
+                <R20>0</R20><R21>0</R21><R22>1</R22>
+              </CoordinateFrame>
+            </Properties>
+          </Item>
+          <Item class="Pose" referent="RBXPose_3_3">
+            <Properties>
+              <string name="Name">RightUpperArm</string>
+              <float name="Weight">1</float>
+              <CoordinateFrame name="CFrame">
+                <X>0</X><Y>0</Y><Z>0</Z>
+                <R00>1</R00><R01>0</R01><R02>0</R02>
+                <R10>0</R10><R11>1</R11><R12>0</R12>
+                <R20>0</R20><R21>0</R21><R22>1</R22>
+              </CoordinateFrame>
+            </Properties>
+          </Item>
+          <Item class="Pose" referent="RBXPose_3_4">
+            <Properties>
+              <string name="Name">RightLowerArm</string>
+              <float name="Weight">1</float>
+              <CoordinateFrame name="CFrame">
+                <X>0</X><Y>0</Y><Z>0</Z>
+                <R00>1</R00><R01>0</R01><R02>0</R02>
+                <R10>0</R10><R11>1</R11><R12>0</R12>
+                <R20>0</R20><R21>0</R21><R22>1</R22>
+              </CoordinateFrame>
+            </Properties>
+          </Item>
+          <Item class="Pose" referent="RBXPose_3_5">
+            <Properties>
+              <string name="Name">LeftUpperArm</string>
+              <float name="Weight">1</float>
+              <CoordinateFrame name="CFrame">
+                <X>0</X><Y>0</Y><Z>0</Z>
+                <R00>1</R00><R01>0</R01><R02>0</R02>
+                <R10>0</R10><R11>1</R11><R12>0</R12>
+                <R20>0</R20><R21>0</R21><R22>1</R22>
+              </CoordinateFrame>
+            </Properties>
+          </Item>
+          <Item class="Pose" referent="RBXPose_3_6">
+            <Properties>
+              <string name="Name">LeftUpperLeg</string>
+              <float name="Weight">1</float>
+              <CoordinateFrame name="CFrame">
+                <X>0</X><Y>0</Y><Z>0</Z>
+                <R00>1</R00><R01>0</R01><R02>0</R02>
+                <R10>0</R10><R11>1</R11><R12>0</R12>
+                <R20>0</R20><R21>0</R21><R22>1</R22>
+              </CoordinateFrame>
+            </Properties>
+          </Item>
+          <Item class="Pose" referent="RBXPose_3_7">
+            <Properties>
+              <string name="Name">LeftLowerLeg</string>
+              <float name="Weight">1</float>
+              <CoordinateFrame name="CFrame">
+                <X>0</X><Y>0</Y><Z>0</Z>
+                <R00>1</R00><R01>0</R01><R02>0</R02>
+                <R10>0</R10><R11>1</R11><R12>0</R12>
+                <R20>0</R20><R21>0</R21><R22>1</R22>
+              </CoordinateFrame>
+            </Properties>
+          </Item>
+          <Item class="Pose" referent="RBXPose_3_8">
+            <Properties>
+              <string name="Name">RightUpperLeg</string>
+              <float name="Weight">1</float>
+              <CoordinateFrame name="CFrame">
+                <X>0</X><Y>0</Y><Z>0</Z>
+                <R00>1</R00><R01>0</R01><R02>0</R02>
+                <R10>0</R10><R11>1</R11><R12>0</R12>
+                <R20>0</R20><R21>0</R21><R22>1</R22>
+              </CoordinateFrame>
+            </Properties>
+          </Item>
+          <Item class="Pose" referent="RBXPose_3_9">
+            <Properties>
+              <string name="Name">RightLowerLeg</string>
+              <float name="Weight">1</float>
+              <CoordinateFrame name="CFrame">
+                <X>0</X><Y>0</Y><Z>0</Z>
+                <R00>1</R00><R01>0</R01><R02>0</R02>
+                <R10>0</R10><R11>1</R11><R12>0</R12>
+                <R20>0</R20><R21>0</R21><R22>1</R22>
+              </CoordinateFrame>
+            </Properties>
+          </Item>
+      </Item>
+    </Item>
+    <Item class="Keyframe" referent="RBXKF_4">
+      <Properties>
+        <string name="Name">HeavyLandingFinisher</string>
+        <float name="Time">1.35</float>
+      </Properties>
+      <Item class="Pose" referent="RBXRootPose_4">
+        <Properties>
+          <string name="Name">HumanoidRootPart</string>
+          <float name="Weight">1</float>
+        </Properties>
+          <Item class="Pose" referent="RBXPose_4_0">
+            <Properties>
+              <string name="Name">LowerTorso</string>
+              <float name="Weight">1</float>
+              <CoordinateFrame name="CFrame">
+                <X>0</X><Y>-0.65</Y><Z>-1.1</Z>
+                <R00>1</R00><R01>0</R01><R02>0</R02>
+                <R10>0</R10><R11>1</R11><R12>0</R12>
+                <R20>0</R20><R21>0</R21><R22>1</R22>
+              </CoordinateFrame>
+            </Properties>
+          </Item>
+          <Item class="Pose" referent="RBXPose_4_1">
+            <Properties>
+              <string name="Name">UpperTorso</string>
+              <float name="Weight">1</float>
+              <CoordinateFrame name="CFrame">
+                <X>0</X><Y>0</Y><Z>0</Z>
+                <R00>1</R00><R01>0</R01><R02>0</R02>
+                <R10>0</R10><R11>1</R11><R12>0</R12>
+                <R20>0</R20><R21>0</R21><R22>1</R22>
+              </CoordinateFrame>
+            </Properties>
+          </Item>
+          <Item class="Pose" referent="RBXPose_4_2">
+            <Properties>
+              <string name="Name">Head</string>
+              <float name="Weight">1</float>
+              <CoordinateFrame name="CFrame">
+                <X>0</X><Y>0</Y><Z>0</Z>
+                <R00>1</R00><R01>0</R01><R02>0</R02>
+                <R10>0</R10><R11>1</R11><R12>0</R12>
+                <R20>0</R20><R21>0</R21><R22>1</R22>
+              </CoordinateFrame>
+            </Properties>
+          </Item>
+          <Item class="Pose" referent="RBXPose_4_3">
+            <Properties>
+              <string name="Name">RightUpperArm</string>
+              <float name="Weight">1</float>
+              <CoordinateFrame name="CFrame">
+                <X>0</X><Y>0</Y><Z>0</Z>
+                <R00>1</R00><R01>0</R01><R02>0</R02>
+                <R10>0</R10><R11>1</R11><R12>0</R12>
+                <R20>0</R20><R21>0</R21><R22>1</R22>
+              </CoordinateFrame>
+            </Properties>
+          </Item>
+          <Item class="Pose" referent="RBXPose_4_4">
+            <Properties>
+              <string name="Name">RightLowerArm</string>
+              <float name="Weight">1</float>
+              <CoordinateFrame name="CFrame">
+                <X>0</X><Y>0</Y><Z>0</Z>
+                <R00>1</R00><R01>0</R01><R02>0</R02>
+                <R10>0</R10><R11>1</R11><R12>0</R12>
+                <R20>0</R20><R21>0</R21><R22>1</R22>
+              </CoordinateFrame>
+            </Properties>
+          </Item>
+          <Item class="Pose" referent="RBXPose_4_5">
+            <Properties>
+              <string name="Name">LeftUpperArm</string>
+              <float name="Weight">1</float>
+              <CoordinateFrame name="CFrame">
+                <X>0</X><Y>0</Y><Z>0</Z>
+                <R00>1</R00><R01>0</R01><R02>0</R02>
+                <R10>0</R10><R11>1</R11><R12>0</R12>
+                <R20>0</R20><R21>0</R21><R22>1</R22>
+              </CoordinateFrame>
+            </Properties>
+          </Item>
+          <Item class="Pose" referent="RBXPose_4_6">
+            <Properties>
+              <string name="Name">LeftUpperLeg</string>
+              <float name="Weight">1</float>
+              <CoordinateFrame name="CFrame">
+                <X>0</X><Y>0</Y><Z>0</Z>
+                <R00>1</R00><R01>0</R01><R02>0</R02>
+                <R10>0</R10><R11>1</R11><R12>0</R12>
+                <R20>0</R20><R21>0</R21><R22>1</R22>
+              </CoordinateFrame>
+            </Properties>
+          </Item>
+          <Item class="Pose" referent="RBXPose_4_7">
+            <Properties>
+              <string name="Name">LeftLowerLeg</string>
+              <float name="Weight">1</float>
+              <CoordinateFrame name="CFrame">
+                <X>0</X><Y>0</Y><Z>0</Z>
+                <R00>1</R00><R01>0</R01><R02>0</R02>
+                <R10>0</R10><R11>1</R11><R12>0</R12>
+                <R20>0</R20><R21>0</R21><R22>1</R22>
+              </CoordinateFrame>
+            </Properties>
+          </Item>
+          <Item class="Pose" referent="RBXPose_4_8">
+            <Properties>
+              <string name="Name">RightUpperLeg</string>
+              <float name="Weight">1</float>
+              <CoordinateFrame name="CFrame">
+                <X>0</X><Y>0</Y><Z>0</Z>
+                <R00>1</R00><R01>0</R01><R02>0</R02>
+                <R10>0</R10><R11>1</R11><R12>0</R12>
+                <R20>0</R20><R21>0</R21><R22>1</R22>
+              </CoordinateFrame>
+            </Properties>
+          </Item>
+          <Item class="Pose" referent="RBXPose_4_9">
+            <Properties>
+              <string name="Name">RightLowerLeg</string>
+              <float name="Weight">1</float>
+              <CoordinateFrame name="CFrame">
+                <X>0</X><Y>0</Y><Z>0</Z>
+                <R00>1</R00><R01>0</R01><R02>0</R02>
+                <R10>0</R10><R11>1</R11><R12>0</R12>
+                <R20>0</R20><R21>0</R21><R22>1</R22>
+              </CoordinateFrame>
+            </Properties>
+          </Item>
+      </Item>
+    </Item>
+    <Item class="Keyframe" referent="RBXKF_5">
+      <Properties>
+        <string name="Name">RecoveryToStance</string>
+        <float name="Time">1.75</float>
+      </Properties>
+      <Item class="Pose" referent="RBXRootPose_5">
+        <Properties>
+          <string name="Name">HumanoidRootPart</string>
+          <float name="Weight">1</float>
+        </Properties>
+          <Item class="Pose" referent="RBXPose_5_0">
+            <Properties>
+              <string name="Name">LowerTorso</string>
+              <float name="Weight">1</float>
+              <CoordinateFrame name="CFrame">
+                <X>0</X><Y>-0.25</Y><Z>0</Z>
+                <R00>1</R00><R01>0</R01><R02>0</R02>
+                <R10>0</R10><R11>1</R11><R12>0</R12>
+                <R20>0</R20><R21>0</R21><R22>1</R22>
+              </CoordinateFrame>
+            </Properties>
+          </Item>
+          <Item class="Pose" referent="RBXPose_5_1">
+            <Properties>
+              <string name="Name">UpperTorso</string>
+              <float name="Weight">1</float>
+              <CoordinateFrame name="CFrame">
+                <X>0</X><Y>0</Y><Z>0</Z>
+                <R00>1</R00><R01>0</R01><R02>0</R02>
+                <R10>0</R10><R11>1</R11><R12>0</R12>
+                <R20>0</R20><R21>0</R21><R22>1</R22>
+              </CoordinateFrame>
+            </Properties>
+          </Item>
+          <Item class="Pose" referent="RBXPose_5_2">
+            <Properties>
+              <string name="Name">Head</string>
+              <float name="Weight">1</float>
+              <CoordinateFrame name="CFrame">
+                <X>0</X><Y>0</Y><Z>0</Z>
+                <R00>1</R00><R01>0</R01><R02>0</R02>
+                <R10>0</R10><R11>1</R11><R12>0</R12>
+                <R20>0</R20><R21>0</R21><R22>1</R22>
+              </CoordinateFrame>
+            </Properties>
+          </Item>
+          <Item class="Pose" referent="RBXPose_5_3">
+            <Properties>
+              <string name="Name">RightUpperArm</string>
+              <float name="Weight">1</float>
+              <CoordinateFrame name="CFrame">
+                <X>0</X><Y>0</Y><Z>0</Z>
+                <R00>1</R00><R01>0</R01><R02>0</R02>
+                <R10>0</R10><R11>1</R11><R12>0</R12>
+                <R20>0</R20><R21>0</R21><R22>1</R22>
+              </CoordinateFrame>
+            </Properties>
+          </Item>
+          <Item class="Pose" referent="RBXPose_5_4">
+            <Properties>
+              <string name="Name">RightLowerArm</string>
+              <float name="Weight">1</float>
+              <CoordinateFrame name="CFrame">
+                <X>0</X><Y>0</Y><Z>0</Z>
+                <R00>1</R00><R01>0</R01><R02>0</R02>
+                <R10>0</R10><R11>1</R11><R12>0</R12>
+                <R20>0</R20><R21>0</R21><R22>1</R22>
+              </CoordinateFrame>
+            </Properties>
+          </Item>
+          <Item class="Pose" referent="RBXPose_5_5">
+            <Properties>
+              <string name="Name">LeftUpperArm</string>
+              <float name="Weight">1</float>
+              <CoordinateFrame name="CFrame">
+                <X>0</X><Y>0</Y><Z>0</Z>
+                <R00>1</R00><R01>0</R01><R02>0</R02>
+                <R10>0</R10><R11>1</R11><R12>0</R12>
+                <R20>0</R20><R21>0</R21><R22>1</R22>
+              </CoordinateFrame>
+            </Properties>
+          </Item>
+          <Item class="Pose" referent="RBXPose_5_6">
+            <Properties>
+              <string name="Name">LeftLowerArm</string>
+              <float name="Weight">1</float>
+              <CoordinateFrame name="CFrame">
+                <X>0</X><Y>0</Y><Z>0</Z>
+                <R00>1</R00><R01>0</R01><R02>0</R02>
+                <R10>0</R10><R11>1</R11><R12>0</R12>
+                <R20>0</R20><R21>0</R21><R22>1</R22>
+              </CoordinateFrame>
+            </Properties>
+          </Item>
+          <Item class="Pose" referent="RBXPose_5_7">
+            <Properties>
+              <string name="Name">LeftUpperLeg</string>
+              <float name="Weight">1</float>
+              <CoordinateFrame name="CFrame">
+                <X>0</X><Y>0</Y><Z>0</Z>
+                <R00>1</R00><R01>0</R01><R02>0</R02>
+                <R10>0</R10><R11>1</R11><R12>0</R12>
+                <R20>0</R20><R21>0</R21><R22>1</R22>
+              </CoordinateFrame>
+            </Properties>
+          </Item>
+          <Item class="Pose" referent="RBXPose_5_8">
+            <Properties>
+              <string name="Name">LeftLowerLeg</string>
+              <float name="Weight">1</float>
+              <CoordinateFrame name="CFrame">
+                <X>0</X><Y>0</Y><Z>0</Z>
+                <R00>1</R00><R01>0</R01><R02>0</R02>
+                <R10>0</R10><R11>1</R11><R12>0</R12>
+                <R20>0</R20><R21>0</R21><R22>1</R22>
+              </CoordinateFrame>
+            </Properties>
+          </Item>
+          <Item class="Pose" referent="RBXPose_5_9">
+            <Properties>
+              <string name="Name">RightUpperLeg</string>
+              <float name="Weight">1</float>
+              <CoordinateFrame name="CFrame">
+                <X>0</X><Y>0</Y><Z>0</Z>
+                <R00>1</R00><R01>0</R01><R02>0</R02>
+                <R10>0</R10><R11>1</R11><R12>0</R12>
+                <R20>0</R20><R21>0</R21><R22>1</R22>
+              </CoordinateFrame>
+            </Properties>
+          </Item>
+          <Item class="Pose" referent="RBXPose_5_10">
+            <Properties>
+              <string name="Name">RightLowerLeg</string>
+              <float name="Weight">1</float>
+              <CoordinateFrame name="CFrame">
+                <X>0</X><Y>0</Y><Z>0</Z>
+                <R00>1</R00><R01>0</R01><R02>0</R02>
+                <R10>0</R10><R11>1</R11><R12>0</R12>
+                <R20>0</R20><R21>0</R21><R22>1</R22>
+              </CoordinateFrame>
+            </Properties>
+          </Item>
+      </Item>
+    </Item>
+  </Item>
+</roblox>

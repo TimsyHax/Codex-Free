@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="catppuccin-mocha">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>>_ OpenAI Codex (v0.1.0-free) — 100% Free Terminal &amp; Roblox Studio Agent</title>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <div class="codex-app-shell" id="drop-zone">
+    <!-- Top Terminal Chrome Bar -->
+    <header class="terminal-topbar">
+      <div class="topbar-left">
+        <div class="window-dots" title="OpenAI Codex CLI TUI">
+          <span class="dot dot-red"></span>
+          <span class="dot dot-yellow"></span>
+          <span class="dot dot-green"></span>
+        </div>
+        <div class="brand-badge">
+          <span class="brand-prompt">&gt;_</span>
+          <span class="brand-title">OpenAI Codex</span>
+          <span class="brand-version" id="top-version">(v0.1.0-free)</span>
+        </div>
+        <div class="topbar-chip" id="top-cwd-chip" title="Current Working Directory">
+          <span class="chip-icon">📁</span>
+          <span id="top-cwd">~/Codex-Free</span>
+        </div>
+        <div class="topbar-chip" id="top-branch-chip" title="Git Branch">
+          <span class="chip-icon">⎇</span>
+          <span id="top-branch">main</span>
+        </div>
+      </div>
+
+      <div class="topbar-right">
+        <a
+          class="topbar-btn free-pill"
+          href="/releases/Codex-Free-Windows-x64.zip"
+          download="Codex-Free-Windows-x64.zip"
+          style="text-decoration: none;"
+          title="Download Codex-Free-Windows-x64.zip containing Codex-Free.exe and Codex-CLI.exe"
+        >
+          <span>⬇ Windows .zip (.exe)</span>
+        </a>
+        <button class="topbar-btn roblox-pill" id="btn-open-roblox-tab" title="Open Roblox Studio 3D Model & R15 Animation Workbench (/roblox)">
+          <span>🎮 Roblox Studio</span>
+        </button>
+        <button class="topbar-btn" id="btn-open-model" title="Change Model & Reasoning Effort (/model)">
+          <span class="status-dot online"></span>
+          <span id="top-model-label">gpt-5.1-codex (high)</span>
+        </button>
+        <button class="topbar-btn" id="btn-open-permissions" title="Change Approval Mode (/permissions)">
+          <span id="top-perm-label">Auto Edit</span>
+        </button>
+        <button class="topbar-btn free-pill" id="btn-open-free" title="Zero-Key Free AI Router & Unlimited Plan (/free)">
+          <span>∞ $0.00 FREE</span>
+        </button>
+        <button class="topbar-btn inspector-toggle" id="btn-toggle-drawer" title="Toggle Workspace & Roblox Studio Inspector">
+          <span>Studio Drawer</span>
+          <span class="badge-count" id="top-file-count">0</span>
+        </button>
+      </div>
+    </header>
+
+    <!-- Main Split Layout: 1:1 TUI Viewport + Collapsible Studio & Workspace Drawer -->
+    <div class="codex-main-layout">
+      <!-- Left/Center: Authentic 1:1 OpenAI Codex TUI Terminal -->
+      <main class="tui-container" id="tui-container">
+        <!-- Floating Pet Companion (when enabled via /pets) -->
+        <pre class="terminal-pet-widget hidden" id="terminal-pet-widget"></pre>
+
+        <!-- Scrollable Transcript History Cells -->
+        <div class="tui-transcript" id="tui-transcript" tabindex="0" aria-label="Codex CLI transcript">
+          <!-- Populated dynamically by app.js -->
+        </div>
+
+        <!-- Bottom Pane: Popups, Approval Modal, Attachments, Composer, and Footer -->
+        <section class="tui-bottom-pane" id="tui-bottom-pane">
+          <!-- Interactive Overlay (Slash Popup, @Mention Popup, Model Picker, Approval Modal, etc.) -->
+          <div class="tui-overlay hidden" id="tui-overlay"></div>
+
+          <!-- Active Turn Spinner Bar -->
+          <div class="tui-working-bar hidden" id="tui-working-bar">
+            <span class="spinner-glyph" id="working-spinner">⠋</span>
+            <span class="working-text" id="working-text">Thinking (gpt-5.1-codex · high · $0.00 Free)…</span>
+            <span class="working-hint">esc to interrupt</span>
+          </div>
+
+          <!-- Composer Input Box -->
+          <div class="tui-composer-box" id="tui-composer-box">
+            <div class="composer-plan-banner hidden" id="composer-plan-banner">
+              <span>PLAN MODE ACTIVE</span>
+              <span class="dim">Codex will design a plan without modifying files. Type /plan to exit.</span>
+            </div>
+
+            <!-- Attached Photos & Videos Strip -->
+            <div class="composer-attachments-strip hidden" id="composer-attachments-strip"></div>
+
+            <div class="composer-row">
+              <span class="composer-prompt-glyph" id="composer-glyph">›</span>
+              <textarea
+                id="composer-input"
+                class="composer-textarea"
+                rows="1"
+                placeholder="Ask Codex to build code, Roblox 3D models, R15 animations, or drop photos/videos…"
+                autocomplete="off"
+                spellcheck="false"
+                autofocus
+              ></textarea>
+              <input
+                type="file"
+                id="media-file-input"
+                class="hidden"
+                accept="image/*,video/*"
+                multiple
+              />
+              <button
+                class="composer-attach-btn"
+                id="composer-attach-btn"
+                title="Attach Photo or Video (Image for 3D Model Palette/Reference, Video for R15 Motion Capture)"
+              >
+                📎 Media
+              </button>
+              <button class="composer-send-btn" id="composer-send-btn" title="Send prompt (Enter)">
+                ↵
+              </button>
+            </div>
+          </div>
+
+          <!-- Official Codex Bottom Footer Row -->
+          <div class="tui-footer-bar" id="tui-footer-bar">
+            <div class="footer-left">
+              <span class="footer-hint-item" id="footer-shortcuts-btn">? for shortcuts</span>
+              <span class="footer-sep">·</span>
+              <span class="footer-hint-item" id="footer-slash-btn">/ for commands</span>
+              <span class="footer-sep">·</span>
+              <span class="footer-hint-item" id="footer-attach-btn">📎 attach photo/video</span>
+              <span class="footer-sep">·</span>
+              <span class="footer-hint-item" id="footer-roblox-btn">/roblox studio</span>
+            </div>
+            <div class="footer-right">
+              <span class="footer-free-tag" id="footer-provider-tag">Zero-Key Free AI ($0.00)</span>
+              <span class="footer-sep">·</span>
+              <span id="footer-context-left">100% context left</span>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <!-- Right: Collapsible Studio & Workspace Inspector -->
+      <aside class="workspace-drawer" id="workspace-drawer">
+        <div class="drawer-tabs">
+          <button class="drawer-tab active" data-tab="roblox">🎮 Roblox</button>
+          <button class="drawer-tab" data-tab="files">Files</button>
+          <button class="drawer-tab" data-tab="diff">Diff</button>
+          <button class="drawer-tab" data-tab="free">Free AI</button>
+          <button class="drawer-tab" data-tab="presets">Tasks</button>
+        </div>
+
+        <!-- Tab 0: Roblox Studio 3D Model, R15 Animation & Media Workbench -->
+        <div class="drawer-panel active" id="panel-roblox">
+          <div class="panel-header-row">
+            <span class="panel-title">🎮 Roblox Studio 3D &amp; R15 Engine</span>
+            <button class="mini-action-btn" id="btn-download-plugin" title="Download Roblox Studio Live Sync Plugin (.lua)">⬇ Plugin</button>
+          </div>
+
+          <!-- Interactive 3D Viewport in Drawer -->
+          <div class="roblox-stage-card">
+            <div class="roblox-stage-header">
+              <span id="rbx-stage-title">AegisTitanMech (23 parts)</span>
+              <span class="free-badge-mini" id="rbx-stage-badge">3D MODEL</span>
+            </div>
+            <canvas id="drawer-roblox-canvas" width="350" height="230" class="roblox-canvas"></canvas>
+            <div class="roblox-stage-controls">
+              <button class="mini-action-btn" id="btn-rbx-play-toggle">⏸ Pause</button>
+              <input type="range" id="rbx-timeline-slider" min="0" max="100" value="0" class="rbx-slider" title="Scrub R15 Animation Timeline / Orbit" />
+              <button class="mini-action-btn" id="btn-rbx-download-rbxmx" title="Download .rbxmx for Roblox Studio">⬇ .rbxmx</button>
+              <button class="mini-action-btn" id="btn-rbx-copy-luau" title="Copy Command Bar Luau Script">📋 Luau</button>
+            </div>
+          </div>
+
+          <!-- 1-Click High-Precision Roblox Generators -->
+          <div class="panel-header-row">
+            <span class="panel-title">Instant 3D Models &amp; R15 Animations</span>
+          </div>
+          <div class="rbx-quick-grid">
+            <button class="rbx-gen-btn" data-prompt="Build a Cyberpunk Plasma Katana 3D model for Roblox Studio">
+              🗡️ Cyber Katana (19 parts)
+            </button>
+            <button class="rbx-gen-btn" data-prompt="Build an Aegis Titan Mech 3D model for Roblox Studio">
+              🤖 Titan Mech (23 parts)
+            </button>
+            <button class="rbx-gen-btn" data-prompt="Build a Cyber GT Supercar 3D model for Roblox Studio">
+              🏎️ GT Supercar (21 parts)
+            </button>
+            <button class="rbx-gen-btn" data-prompt="Build a Citadel Shrine Tower 3D model for Roblox Studio">
+              🏯 Citadel Tower (17 parts)
+            </button>
+            <button class="rbx-gen-btn" data-prompt="Build a Valkyrie Pulse Rifle 3D model for Roblox Studio">
+              🔫 Pulse Rifle (11 parts)
+            </button>
+            <button class="rbx-gen-btn anim" data-prompt="Make an R15 Katana 3-hit slash combo animation for Roblox Studio">
+              🎬 R15 Katana Slash Combo
+            </button>
+            <button class="rbx-gen-btn anim" data-prompt="Make an R15 parkour backflip animation for Roblox Studio">
+              🤸 R15 Parkour Backflip
+            </button>
+            <button class="rbx-gen-btn anim" data-prompt="Make an R15 tactical sprint run cycle animation for Roblox Studio">
+              🏃 R15 Tactical Sprint
+            </button>
+          </div>
+
+          <!-- Photo & Video Attachment Studio Tools -->
+          <div class="panel-header-row" style="margin-top: 4px;">
+            <span class="panel-title">📸 Photo &amp; Video Reference Capture</span>
+          </div>
+          <div class="media-helper-card">
+            <p class="preset-sub">
+              Attach any <strong>Photo</strong> (extracts color palette &amp; proportions for 3D Models) or <strong>Video</strong> (extracts frame-by-frame motion for R15 Animations):
+            </p>
+            <div class="media-btn-row">
+              <button class="mini-action-btn" id="btn-upload-media-drawer">📎 Upload Photo / Video</button>
+              <button class="mini-action-btn" id="btn-demo-photo" title="Attach a synthetic Neon Cyber Sword reference photo">🎨 Demo Photo</button>
+              <button class="mini-action-btn" id="btn-demo-video" title="Attach a synthetic Martial Arts Combo motion video">🎥 Demo Video</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tab 1: Workspace File Explorer & File Viewer -->
+        <div class="drawer-panel" id="panel-files">
+          <div class="panel-header-row">
+            <span class="panel-title">Workspace Files</span>
+            <button class="mini-action-btn" id="btn-refresh-files" title="Refresh file tree">↻ Refresh</button>
+          </div>
+          <div class="file-list" id="drawer-file-list"></div>
+          <div class="file-preview-box" id="drawer-file-preview">
+            <div class="file-preview-header">
+              <span id="preview-file-name">Select a file to inspect</span>
+              <button class="mini-action-btn" id="btn-mention-selected-file" title="Insert @file into prompt">@ Mention</button>
+            </div>
+            <pre class="file-preview-code" id="preview-file-code">Click any file above to view its contents with line numbers, or type @ in the prompt.</pre>
+          </div>
+        </div>
+
+        <!-- Tab 2: Live Git Status & Unified Diff -->
+        <div class="drawer-panel" id="panel-diff">
+          <div class="panel-header-row">
+            <span class="panel-title">Working Tree Diff (/diff)</span>
+            <button class="mini-action-btn" id="btn-refresh-diff">↻ Refresh</button>
+          </div>
+          <pre class="diff-viewer-box" id="drawer-diff-content">Loading git diff...</pre>
+        </div>
+
+        <!-- Tab 3: Zero-Key Free AI Router Configuration -->
+        <div class="drawer-panel" id="panel-free">
+          <div class="panel-header-row">
+            <span class="panel-title">100% Free AI Architecture</span>
+            <span class="free-badge-mini">$0.00 Forever</span>
+          </div>
+          <div class="free-config-card">
+            <p class="free-desc">
+              <strong>Codex-Free</strong> unlocks every OpenAI Codex Pro &amp; Roblox Studio feature with zero paid API keys.
+            </p>
+            <label class="field-label">Active Inference Engine</label>
+            <select id="select-provider-mode" class="drawer-select">
+              <option value="auto-free">Zero-Key Cloud + Local Engine Fallback (Recommended)</option>
+              <option value="local-engine">Built-in Local Autonomous Coding Engine (100% Offline · 0ms)</option>
+              <option value="ollama">Local Ollama / LM Studio (http://localhost:11434)</option>
+              <option value="custom">Custom OpenAI-Compatible Free Endpoint (Groq / OpenRouter :free)</option>
+            </select>
+
+            <div id="custom-endpoint-fields" class="custom-endpoint-fields hidden">
+              <label class="field-label">OpenAI-Compatible Endpoint URL</label>
+              <input type="text" id="input-custom-endpoint" class="drawer-input" placeholder="http://localhost:11434/v1/chat/completions" />
+              <label class="field-label">Optional API Key (leave blank for Ollama / Pollinations)</label>
+              <input type="password" id="input-custom-apikey" class="drawer-input" placeholder="Optional free key..." />
+              <label class="field-label">Custom Model ID (optional)</label>
+              <input type="text" id="input-custom-model" class="drawer-input" placeholder="qwen2.5-coder:32b" />
+            </div>
+
+            <div class="free-plan-Perks">
+              <div class="perk-row"><span>✓ ChatGPT Pro $200/mo Gate</span><span class="perk-val">Bypassed (Free)</span></div>
+              <div class="perk-row"><span>✓ Roblox .rbxmx 3D Model Export</span><span class="perk-val">Unlocked</span></div>
+              <div class="perk-row"><span>✓ R15 KeyframeSequence Animator</span><span class="perk-val">Unlocked</span></div>
+              <div class="perk-row"><span>✓ Photo &amp; Video Motion Capture</span><span class="perk-val">Unlocked</span></div>
+              <div class="perk-row"><span>✓ Live Roblox Studio HTTP Plugin</span><span class="perk-val">Unlocked</span></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tab 4: 1-Click Interactive Codex Tasks -->
+        <div class="drawer-panel" id="panel-presets">
+          <div class="panel-header-row">
+            <span class="panel-title">Try Real Codex &amp; Roblox Tasks</span>
+          </div>
+          <div class="presets-list" id="drawer-presets-list">
+            <button class="preset-card" data-prompt="Build a Cyberpunk Plasma Katana 3D model for Roblox Studio">
+              <span class="preset-title">🗡️ Build Roblox 3D Cyber Katana (.rbxmx + Luau)</span>
+              <span class="preset-sub">Generates 19-part welded 3D model with Neon blade &amp; interactive 3D viewport</span>
+            </button>
+            <button class="preset-card" data-prompt="Make an R15 Katana 3-hit slash combo animation for Roblox Studio">
+              <span class="preset-title">🎬 Generate R15 Katana Slash Combo Animation</span>
+              <span class="preset-sub">Builds a 6-keyframe R15 KeyframeSequence with 3D rig playback &amp; .rbxmx export</span>
+            </button>
+            <button class="preset-card" data-prompt="/plugin">
+              <span class="preset-title">🔌 Generate Roblox Studio Live Sync Plugin (/plugin)</span>
+              <span class="preset-sub">Creates roblox/CodexFreeStudioPlugin.lua for automatic HttpService sync</span>
+            </button>
+            <button class="preset-card" data-prompt="Create examples/fibonacci.js that computes the first 15 Fibonacci numbers and run it">
+              <span class="preset-title">⚡ Create &amp; Run Fibonacci Script</span>
+              <span class="preset-sub">Generates examples/fibonacci.js with unified diff and runs it in shell</span>
+            </button>
+            <button class="preset-card" data-prompt="/status">
+              <span class="preset-title">📊 Inspect /status Card</span>
+              <span class="preset-sub">Shows 1:1 OpenAI Codex session card with Unlimited Free rate limits</span>
+            </button>
+            <button class="preset-card" data-prompt="Run npm test">
+              <span class="preset-title">🧪 Run Automated Test Suite</span>
+              <span class="preset-sub">Executes `npm test` in workspace (triggers Approval Modal in Auto Edit mode)</span>
+            </button>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </div>
+
+  <script type="module" src="/app.js"></script>
+</body>
+</html>

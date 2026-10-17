@@ -1,0 +1,33 @@
+{
+  "name": "codex-free",
+  "version": "0.1.0-free",
+  "description": "1:1 OpenAI Codex CLI & Web Terminal Agent — 100% Free, Zero API Keys Required",
+  "type": "module",
+  "main": "src/backend/server.js",
+  "bin": {
+    "codex": "./bin/codex.js",
+    "codex-free": "./bin/codex.js"
+  },
+  "scripts": {
+    "start": "node src/backend/server.js",
+    "dev": "node src/backend/server.js",
+    "cli": "node bin/codex.js",
+    "test": "node --test tests/codex.test.js"
+  },
+  "keywords": [
+    "codex",
+    "openai-codex",
+    "coding-agent",
+    "cli",
+    "tui",
+    "free-ai",
+    "terminal-agent"
+  ],
+  "author": "Codex-Free Contributors",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.21.2",
+    "ws": "^8.18.0"
+  }
+}
