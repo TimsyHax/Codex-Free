@@ -20,147 +20,122 @@ const repoRoot = path.resolve(__dirname, "..");
  * Generates a valid, specification-compliant 64-bit Windows PE32+ (x86_64) executable (.exe)
  * that invokes `kernel32.dll!WinExec(commandLine, uCmdShow)` and `kernel32.dll!ExitProcess(0)`.
  */
-export function buildWindowsPe64Executable(commandLine, { subsystem = 2, uCmdShow = 0 } = {}) {
-  // File size: 0x0600 (1536 bytes):
-  //   0x0000..0x0200: DOS + PE32+ Headers (RVA 0x0000)
-  //   0x0200..0x0400: .text section       (RVA 0x1000)
-  //   0x0400..0x0600: .rdata/.idata       (RVA 0x2000)
-  const buf = Buffer.alloc(0x0600, 0);
-
-  // 1. DOS Header at 0x0000
-  buf.write("MZ", 0x00, "ascii");
-  buf.writeUInt16LE(0x0090, 0x02);
-  buf.writeUInt16LE(0x0003, 0x04);
-  buf.writeUInt16LE(0x0004, 0x08);
-  buf.writeUInt16LE(0xffff, 0x0c);
-  buf.writeUInt16LE(0x00b8, 0x10);
-  buf.writeUInt16LE(0x0040, 0x18);
-  buf.writeUInt32LE(0x00000080, 0x3c); // e_lfanew = 0x80
-
-  // 2. PE Signature at 0x0080 ("PE\0\0")
+export function buildWindowsPe64Executable(commandLine, { subsystem = 2, uCmdShow = 1 } = {}) {
+  // Tiny native AMD64 launcher. It resolves its own directory first, so launching
+  // from Explorer, Downloads, a shortcut, or another working directory all work.
+  const buf = Buffer.alloc(0x0800, 0);
+  buf.write("MZ", 0, "ascii");
+  buf.writeUInt32LE(0x80, 0x3c);
   buf.write("PE\0\0", 0x80, "ascii");
+  buf.writeUInt16LE(0x8664, 0x84);
+  buf.writeUInt16LE(2, 0x86);
+  buf.writeUInt32LE(0x67100000, 0x88);
+  buf.writeUInt16LE(0x00f0, 0x94);
+  buf.writeUInt16LE(0x0022, 0x96);
 
-  // 3. COFF File Header at 0x0084 (20 bytes)
-  buf.writeUInt16LE(0x8664, 0x84); // Machine = IMAGE_FILE_MACHINE_AMD64
-  buf.writeUInt16LE(2, 0x86);      // NumberOfSections = 2 (.text, .rdata)
-  buf.writeUInt32LE(0x67100000, 0x88); // TimeDateStamp
-  buf.writeUInt32LE(0, 0x8c);      // PointerToSymbolTable
-  buf.writeUInt32LE(0, 0x90);      // NumberOfSymbols
-  buf.writeUInt16LE(0x00f0, 0x94); // SizeOfOptionalHeader = 240 bytes (PE32+)
-  buf.writeUInt16LE(0x0022, 0x96); // Characteristics = EXECUTABLE_IMAGE | LARGE_ADDRESS_AWARE
-
-  // 4. Optional Header PE32+ at 0x0098 (240 bytes)
   const opt = 0x98;
-  buf.writeUInt16LE(0x020b, opt + 0x00); // Magic = PE32+ (64-bit)
-  buf.writeUInt8(14, opt + 0x02);        // MajorLinkerVersion
-  buf.writeUInt8(0, opt + 0x03);         // MinorLinkerVersion
-  buf.writeUInt32LE(0x0200, opt + 0x04); // SizeOfCode
-  buf.writeUInt32LE(0x0200, opt + 0x08); // SizeOfInitializedData
-  buf.writeUInt32LE(0, opt + 0x0c);      // SizeOfUninitializedData
-  buf.writeUInt32LE(0x1000, opt + 0x10); // AddressOfEntryPoint = 0x1000 (.text)
-  buf.writeUInt32LE(0x1000, opt + 0x14); // BaseOfCode = 0x1000
-  buf.writeBigUInt64LE(0x0000000140000000n, opt + 0x18); // ImageBase
-  buf.writeUInt32LE(0x1000, opt + 0x20); // SectionAlignment = 0x1000
-  buf.writeUInt32LE(0x0200, opt + 0x24); // FileAlignment = 0x0200
-  buf.writeUInt16LE(6, opt + 0x28);      // MajorOperatingSystemVersion
-  buf.writeUInt16LE(0, opt + 0x2a);      // MinorOperatingSystemVersion
-  buf.writeUInt16LE(0, opt + 0x2c);      // MajorImageVersion
-  buf.writeUInt16LE(0, opt + 0x2e);      // MinorImageVersion
-  buf.writeUInt16LE(6, opt + 0x30);      // MajorSubsystemVersion
-  buf.writeUInt16LE(0, opt + 0x32);      // MinorSubsystemVersion
-  buf.writeUInt32LE(0, opt + 0x34);      // Win32VersionValue
-  buf.writeUInt32LE(0x3000, opt + 0x38); // SizeOfImage = 0x3000
-  buf.writeUInt32LE(0x0200, opt + 0x3c); // SizeOfHeaders = 0x0200
-  buf.writeUInt32LE(0, opt + 0x40);      // CheckSum
-  buf.writeUInt16LE(subsystem, opt + 0x44); // Subsystem (2 = GUI, 3 = Console)
-  buf.writeUInt16LE(0x0140, opt + 0x46); // DllCharacteristics (DYNAMIC_BASE | NX_COMPAT)
-  buf.writeBigUInt64LE(0x100000n, opt + 0x48); // SizeOfStackReserve
-  buf.writeBigUInt64LE(0x1000n, opt + 0x50);   // SizeOfStackCommit
-  buf.writeBigUInt64LE(0x100000n, opt + 0x58); // SizeOfHeapReserve
-  buf.writeBigUInt64LE(0x1000n, opt + 0x60);   // SizeOfHeapCommit
-  buf.writeUInt32LE(0, opt + 0x68);            // LoaderFlags
-  buf.writeUInt32LE(16, opt + 0x6c);           // NumberOfRvaAndSizes = 16
+  buf.writeUInt16LE(0x020b, opt);
+  buf.writeUInt8(14, opt + 2);
+  buf.writeUInt32LE(0x200, opt + 4);
+  buf.writeUInt32LE(0x400, opt + 8);
+  buf.writeUInt32LE(0x1000, opt + 0x10);
+  buf.writeUInt32LE(0x1000, opt + 0x14);
+  buf.writeBigUInt64LE(0x140000000n, opt + 0x18);
+  buf.writeUInt32LE(0x1000, opt + 0x20);
+  buf.writeUInt32LE(0x200, opt + 0x24);
+  buf.writeUInt16LE(6, opt + 0x28);
+  buf.writeUInt16LE(6, opt + 0x30);
+  buf.writeUInt32LE(0x3000, opt + 0x38);
+  buf.writeUInt32LE(0x200, opt + 0x3c);
+  buf.writeUInt16LE(subsystem, opt + 0x44);
+  buf.writeUInt16LE(0x0100, opt + 0x46); // NX compatible; fixed image needs no relocations
+  buf.writeBigUInt64LE(0x100000n, opt + 0x48);
+  buf.writeBigUInt64LE(0x1000n, opt + 0x50);
+  buf.writeBigUInt64LE(0x100000n, opt + 0x58);
+  buf.writeBigUInt64LE(0x1000n, opt + 0x60);
+  buf.writeUInt32LE(16, opt + 0x6c);
+  buf.writeUInt32LE(0x2000, opt + 0x78); // import directory
+  buf.writeUInt32LE(40, opt + 0x7c);
+  buf.writeUInt32LE(0x2050, opt + 0xd0); // IAT directory
+  buf.writeUInt32LE(40, opt + 0xd4);
 
-  // Data Directories start at opt + 0x70
-  // Directory[1] = Import Table (RVA 0x2000, Size 40)
-  buf.writeUInt32LE(0x2000, opt + 0x70 + 1 * 8);
-  buf.writeUInt32LE(40, opt + 0x70 + 1 * 8 + 4);
-  // Directory[12] = IAT (RVA 0x2040, Size 24)
-  buf.writeUInt32LE(0x2040, opt + 0x70 + 12 * 8);
-  buf.writeUInt32LE(24, opt + 0x70 + 12 * 8 + 4);
+  const sec1 = 0x188;
+  buf.write(".text\0\0\0", sec1, "ascii");
+  buf.writeUInt32LE(0x200, sec1 + 8);
+  buf.writeUInt32LE(0x1000, sec1 + 12);
+  buf.writeUInt32LE(0x200, sec1 + 16);
+  buf.writeUInt32LE(0x200, sec1 + 20);
+  buf.writeUInt32LE(0x60000020, sec1 + 36);
+  const sec2 = 0x1b0;
+  buf.write(".rdata\0\0", sec2, "ascii");
+  buf.writeUInt32LE(0x400, sec2 + 8);
+  buf.writeUInt32LE(0x2000, sec2 + 12);
+  buf.writeUInt32LE(0x400, sec2 + 16);
+  buf.writeUInt32LE(0x400, sec2 + 20);
+  buf.writeUInt32LE(0xc0000040, sec2 + 36);
 
-  // 5. Section Headers at 0x0188 (2 sections * 40 bytes)
-  const sec1 = 0x0188;
-  buf.write(".text\0\0\0", sec1 + 0x00, "ascii");
-  buf.writeUInt32LE(0x0100, sec1 + 0x08); // VirtualSize
-  buf.writeUInt32LE(0x1000, sec1 + 0x0c); // VirtualAddress = 0x1000
-  buf.writeUInt32LE(0x0200, sec1 + 0x10); // SizeOfRawData = 0x0200
-  buf.writeUInt32LE(0x0200, sec1 + 0x14); // PointerToRawData = 0x0200
-  buf.writeUInt32LE(0x60000020, sec1 + 0x24); // CODE | EXECUTE | READ
+  // Code uses GetModuleFileNameA to find this executable, strips its filename,
+  // and calls SetCurrentDirectoryA before launching the companion script.
+  const code = [];
+  const emit = (...xs) => code.push(...xs);
+  const patchInt32 = (at, value) => {
+    code[at] = value & 0xff;
+    code[at + 1] = (value >> 8) & 0xff;
+    code[at + 2] = (value >> 16) & 0xff;
+    code[at + 3] = (value >> 24) & 0xff;
+  };
+  const callIat = (iatRva) => {
+    emit(0xff, 0x15);
+    const at = code.length;
+    emit(0, 0, 0, 0);
+    patchInt32(at, iatRva - (0x1000 + code.length));
+  };
+  emit(0x48,0x81,0xec,0x28,0x02,0,0);       // sub rsp, 0x228
+  emit(0x48,0x8d,0x4c,0x24,0x20);            // lea rcx, [rsp+0x20]
+  emit(0xba,0,2,0,0);                         // mov edx, 512
+  callIat(0x2060);                             // GetModuleFileNameA
+  emit(0x85,0xc0,0x74,0x1d);                  // test eax,eax / jz launch
+  emit(0x4c,0x8d,0x44,0x04,0x20);             // lea r8, [rsp+rax+0x20]
+  emit(0x49,0xff,0xc8);                        // scan backwards for slash
+  emit(0x41,0x80,0x38,0x5c,0x75,0xf7);
+  emit(0x41,0xc6,0,0);                         // terminate directory string
+  emit(0x48,0x8d,0x4c,0x24,0x20);
+  callIat(0x2068);                             // SetCurrentDirectoryA
+  // launch:
+  emit(0x48,0x8d,0x0d);
+  const cmdDispAt = code.length;
+  emit(0,0,0,0);
+  patchInt32(cmdDispAt, 0x20d8 - (0x1000 + code.length));
+  emit(0xba,uCmdShow & 0xff,0,0,0);
+  callIat(0x2050);                             // WinExec
+  emit(0x31,0xc9);
+  callIat(0x2058);                             // ExitProcess
+  Buffer.from(code).copy(buf, 0x200);
 
-  const sec2 = 0x01b0;
-  buf.write(".rdata\0\0", sec2 + 0x00, "ascii");
-  buf.writeUInt32LE(0x0180, sec2 + 0x08); // VirtualSize
-  buf.writeUInt32LE(0x2000, sec2 + 0x0c); // VirtualAddress = 0x2000
-  buf.writeUInt32LE(0x0200, sec2 + 0x10); // SizeOfRawData = 0x0200
-  buf.writeUInt32LE(0x0400, sec2 + 0x14); // PointerToRawData = 0x0400
-  buf.writeUInt32LE(0xc0000040, sec2 + 0x24); // INITIALIZED_DATA | READ | WRITE (for IAT patching)
-
-  // 6. .text Section Machine Code at File Offset 0x0200 (RVA 0x1000)
-  //   0x1000: 48 83 EC 28             sub rsp, 0x28
-  //   0x1004: 48 8D 0D 7D 10 00 00    lea rcx, [rip + 0x107d]  ; -> RVA 0x2088 (command string)
-  //   0x100B: BA <uCmdShow:u32>       mov edx, uCmdShow
-  //   0x1010: FF 15 2A 10 00 00       call qword ptr [rip + 0x102a] ; -> RVA 0x2040 (WinExec)
-  //   0x1016: 31 C9                   xor ecx, ecx
-  //   0x1018: FF 15 2A 10 00 00       call qword ptr [rip + 0x102a] ; -> RVA 0x2048 (ExitProcess)
-  //   0x101E: 48 83 C4 28             add rsp, 0x28
-  //   0x1022: C3                      ret
-  const code = Buffer.from([
-    0x48, 0x83, 0xec, 0x28,
-    0x48, 0x8d, 0x0d, 0x7d, 0x10, 0x00, 0x00,
-    0xba, uCmdShow & 0xff, 0x00, 0x00, 0x00,
-    0xff, 0x15, 0x2a, 0x10, 0x00, 0x00,
-    0x31, 0xc9,
-    0xff, 0x15, 0x2a, 0x10, 0x00, 0x00,
-    0x48, 0x83, 0xc4, 0x28,
-    0xc3
-  ]);
-  code.copy(buf, 0x0200);
-
-  // 7. .rdata / Import Table at File Offset 0x0400 (RVA 0x2000)
-  const rdata = 0x0400;
-  // IMAGE_IMPORT_DESCRIPTOR[0] for KERNEL32.dll
-  buf.writeUInt32LE(0x2028, rdata + 0x00); // OriginalFirstThunk (ILT RVA)
-  buf.writeUInt32LE(0, rdata + 0x04);      // TimeDateStamp
-  buf.writeUInt32LE(0, rdata + 0x08);      // ForwarderChain
-  buf.writeUInt32LE(0x2058, rdata + 0x0c); // Name RVA ("KERNEL32.dll")
-  buf.writeUInt32LE(0x2040, rdata + 0x10); // FirstThunk (IAT RVA)
-  // IMAGE_IMPORT_DESCRIPTOR[1] is all zeros (0x2014..0x2028)
-
-  // ILT at RVA 0x2028 (File Offset 0x0428)
-  buf.writeBigUInt64LE(0x2068n, rdata + 0x28); // Hint/Name RVA for WinExec
-  buf.writeBigUInt64LE(0x2074n, rdata + 0x30); // Hint/Name RVA for ExitProcess
-  buf.writeBigUInt64LE(0n, rdata + 0x38);      // Null terminator
-
-  // IAT at RVA 0x2040 (File Offset 0x0440)
-  buf.writeBigUInt64LE(0x2068n, rdata + 0x40); // Patched to &WinExec at load
-  buf.writeBigUInt64LE(0x2074n, rdata + 0x48); // Patched to &ExitProcess at load
-  buf.writeBigUInt64LE(0n, rdata + 0x50);      // Null terminator
-
-  // DLL Name at RVA 0x2058 (File Offset 0x0458)
-  buf.write("KERNEL32.dll\0", rdata + 0x58, "ascii");
-
-  // Hint/Name 0 at RVA 0x2068 (File Offset 0x0468): Hint=0, "WinExec\0"
-  buf.writeUInt16LE(0, rdata + 0x68);
-  buf.write("WinExec\0", rdata + 0x6a, "ascii");
-
-  // Hint/Name 1 at RVA 0x2074 (File Offset 0x0474): Hint=0, "ExitProcess\0"
-  buf.writeUInt16LE(0, rdata + 0x74);
-  buf.write("ExitProcess\0", rdata + 0x76, "ascii");
-
-  // Command Line String at RVA 0x2088 (File Offset 0x0488)
-  buf.write(commandLine + "\0", rdata + 0x88, "ascii");
-
+  const r = 0x400;
+  buf.writeUInt32LE(0x2028, r);
+  buf.writeUInt32LE(0x2078, r + 12);
+  buf.writeUInt32LE(0x2050, r + 16);
+  const names = [0x2088, 0x2092, 0x20a0, 0x20b8];
+  names.forEach((v, i) => {
+    buf.writeBigUInt64LE(BigInt(v), r + 0x28 + i * 8);
+    buf.writeBigUInt64LE(BigInt(v), r + 0x50 + i * 8);
+  });
+  buf.write("KERNEL32.dll\0", r + 0x78, "ascii");
+  const imports = [
+    [0x88, "WinExec"],
+    [0x92, "ExitProcess"],
+    [0xa0, "GetModuleFileNameA"],
+    [0xb8, "SetCurrentDirectoryA"]
+  ];
+  for (const [off, name] of imports) {
+    buf.writeUInt16LE(0, r + off);
+    buf.write(name + "\0", r + off + 2, "ascii");
+  }
+  if (Buffer.byteLength(commandLine, "ascii") > 0x127) {
+    throw new Error("Windows launcher command is too long");
+  }
+  buf.write(commandLine + "\0", r + 0xd8, "ascii");
   return buf;
 }
 

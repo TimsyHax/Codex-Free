@@ -34,6 +34,11 @@ test("Windows PE64 executable generator and release zip contain valid Codex-Free
   assert.equal(exe.toString("ascii", 0, 2), "MZ");
   assert.equal(exe.toString("ascii", 0x80, 0x84), "PE\0\0");
   assert.equal(exe.readUInt16LE(0x84), 0x8664); // AMD64
+  // The native launcher must resolve its own folder instead of relying on Explorer's cwd.
+  assert.ok(exe.includes(Buffer.from("GetModuleFileNameA\0", "ascii")));
+  assert.ok(exe.includes(Buffer.from("SetCurrentDirectoryA\0", "ascii")));
+  assert.ok(exe.includes(Buffer.from('wscript.exe "bin\\launch-app.vbs"\0', "ascii")));
+  assert.notEqual(exe.readInt32LE(0x213), 0); // call GetModuleFileNameA IAT displacement
 
   const zipPath = path.join(process.cwd(), "releases/Codex-Free-Windows-x64.zip");
   assert.ok(fs.existsSync(zipPath), "releases/Codex-Free-Windows-x64.zip exists");
